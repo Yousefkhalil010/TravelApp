@@ -1,106 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- meta description -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- bootstrap cdn and bootstrap icons -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    />
-
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=REM:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap"
-      rel="stylesheet"
-    />
-    <title>Travel App</title>
-  </head>
-  <body>
-    <div
-      class="container flex-column d-flex justify-content-center align-items-center text-center py-3"
-      width="100"
-    >
-      <header class="site-header align-self-lg-start mb-5">
-        <h1 class="site-title">Where do you wanna Go?</h1>
-      </header>
-      <div
-        id="form_row"
-        class="row flex-column justify-content-center align-items-center mt-5"
-      >
-        <div class="col">
-          <!--  -->
-          <form onsubmit="return Client.handleSubmit(event)" method="POST">
-            <div class="input-group">
-              <span class="input-group-text"
-                ><i class="bi bi-geo-alt"></i
-              ></span>
-              <input
-                type="text"
-                name="city"
-                id="city"
-                class="form-control form-control-lg"
-                placeholder="Entry your Destination"
-                aria-label="City"
-                aria-describedby="City"
-              />
-            </div>
-            <div
-              id="city_error"
-              class="alert alert-danger  mt-2 form-text text-start py-2"
-              role="alert"
-            >
-              
-            </div>
-            <div class="mt-4">
-              <input
-                type="date"
-                name="date"
-                class="form-control form-control-lg"
-                id="flightDate"
-              />
-            </div>
-            <div
-              id="date_error"
-              class="alert alert-danger  mt-2 form-text text-start py-2"
-              role="alert"
-            >
-              <i class="bi bi-exclamation-circle-fill me-2"></i> A simple danger
-              alert—check it out!
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg mt-4">
-              Submit
-            </button>
-          </form>
-          <!--  -->
-        </div>
-        <div class="col flight_data my-5">
-          <h2 id="Rdays"></h2>
-          <p class="cityName"></p>
-          <p class="temp"></p>
-          <p class="max-temp"></p>
-          <p class="min-temp"></p>
-          <p class="weather"></p>
-          <div class="cityPic"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- bootstrap scrip added manually  -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
+        <title>Treather App</title>
+    </head>
+    <body>
+        <main>
+            <section class="app header">
+                Treather App
+            </section>
+            <section class="app">
+                <!--form to submit data-->
+                <form id="form">
+                    <p>Know the weather for your travel with Treather</p>
+                    <label for="text">Please enter destination and date of departure</label>
+                    <div class="text-button">
+                        <input type="text" id="text" placeholder="destination..." required>
+                        <input type="date" id="date" required>
+                        <input type="submit" value="Go on a trip">
+                    </div>
+                </form>
+                <input type="button" id="delete" value="Reset form and results">
+            </section>
+            <!--shows result of the process-->
+            <section class="app results", id="results-area">
+            </section>
+        </main>
+        <!--adding Service Workers for supported browsers-->
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
+    </body>
 </html>

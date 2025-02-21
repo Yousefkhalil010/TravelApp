@@ -1,0 +1,80 @@
+.picture {
+    width: 100%;
+    border-radius: 0.3rem;
+    @media (min-width: 64rem) {
+        width: auto;
+        max-height: 37.5rem;
+        object-fit: contain;
+    }
+}
+
+#results-area {  
+    h2 {
+        text-align: center;
+        text-decoration: underline;
+        font-weight: normal;
+    }
+    h3 {
+        text-align: center;
+        font-weight: normal;
+    }
+    ul {
+        padding: inherit;
+        margin: inherit;
+    }
+    .weather-box {
+        font-size: 1.1rem;
+        display: flex;
+        flex-direction: row;
+        text-transform: uppercase;
+        justify-content: start;
+        padding-left: 1rem;
+        margin-bottom: 0.5rem;
+        align-items: center;
+        img {
+            max-width: 2.5rem;
+        }
+        @media (min-width: 25rem) and (max-width: 47.9rem) {
+            justify-content: center;
+        }
+    }
+    @media (min-width: 48rem) {
+        h2 {
+            font-size: 2.5rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+        .weather-box {
+            font-size: 1.5rem;
+            padding-left: 8rem;
+            img {
+                max-width: 4.5rem;
+            }
+        }
+    }
+    @media (min-width: 64rem) {
+        h2 {
+            font-size: 3.5rem;
+        }
+        h3 {
+            font-size: 2.6rem;
+        }
+        ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        .weather-box {
+            font-size: 1.6rem;
+            padding: 0 0 1rem 1.3rem;
+            display: flex;
+            flex-direction: column;
+            white-space: nowrap;
+            img {
+                max-width: 5rem;
+            }
+        }
+    }
+}

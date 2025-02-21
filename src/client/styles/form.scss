@@ -1,0 +1,127 @@
+//styling for form area
+label {
+    display: block;
+    font-size: 1.0rem;
+    line-height: 1.2;
+    @media (min-width: 48rem) {
+        font-size: 1.6rem;
+        line-height: 1.5;
+    }
+    @media (min-width: 64rem) {
+        font-size: 2rem;
+        line-height: 1.8;
+    }
+}
+
+p {
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 2;
+    @media (min-width: 48rem) {
+        font-size: 2rem;
+        line-height: 2;
+    }
+    @media (min-width: 64rem) {
+        font-size: 3rem;
+        line-height: 2;
+    }
+}
+
+input {
+    border-radius: 0.5rem;
+    height: 2rem;
+    width: 15rem;
+    border: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9rem;
+    padding: 0 0.5rem 0 0.5rem;
+    color: #4d4d4d;
+    &:focus {
+        outline: none;
+    }
+    //specific style for browser support
+    //Firefox, Chrome, Opera
+    &::placeholder {
+        color: #4d4d4d;
+        font-family: 'Oswald', sans-serif;
+    }
+    //Internet Explorer 10-11
+    &:-ms-input-placeholder {
+        color: #4d4d4d;
+        font-family: 'Oswald', sans-serif;
+    }
+    //Microsoft Edge
+    &::-ms-input-placeholder {
+        color: #4d4d4d;
+        font-family: 'Oswald', sans-serif;
+    }
+    &#date {
+        font-size: 0.8rem;
+        width: 7rem;
+        text-align: center;
+    }
+    &[type="submit"] {
+        width: 5.5rem;
+        height: 2rem;
+        text-align: center;
+        vertical-align: middle;
+        box-shadow: 0.2rem 0.25rem 0.3rem #000;
+        cursor: pointer;
+        margin-left: 0.4rem;
+        color: #000;
+    }
+    &#delete {
+        width: 10rem;
+        height: 2rem;
+        box-shadow: 0.2rem 0.25rem 0.3rem #1b1b1b;
+        background-color: #4d4d4d;
+        border-color: white;
+        border-style: solid;
+        border-width: thin;
+        color:#fff;
+        cursor: pointer;
+        text-align: center;
+        vertical-align: middle;
+        margin-left: 5rem;
+    }
+    @media (min-width: 48rem) {
+        height: 2.5rem;
+        width: 16rem;
+        font-size: 1.3rem;
+        padding: 0 0.5rem 0 0.5rem;
+        &#delete {
+            width: 14rem;
+            height: 2.5rem;
+            margin-left: 0.2rem;
+        }
+        &#date {
+            font-size: 1.3rem;
+            width: 9.5rem;
+        }
+        &[type="submit"] {
+            width: 7rem;
+            height: 2.5rem;
+            margin-left: 0;
+        }
+    }
+    @media (min-width: 64rem) {
+        height: 3.5rem;
+        width: 17.5rem;
+        font-size: 1.7rem;
+        padding: 0 1rem 0 1rem;
+        &#delete {
+            width: 18rem;
+            height: 3rem;
+            box-shadow: 0.5rem 0.6rem 0.7rem #1b1b1b;
+        }
+        &#date {
+            font-size: 1.7rem;
+            width: 12rem;
+        }
+        &[type="submit"] {
+            width: 9rem;
+            height: 3.5rem;
+            box-shadow: 0.5rem 0.6rem 0.7rem #000;
+        }
+    }
+}

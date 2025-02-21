@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin"),
     common = require("./webpack.common.js");
     const { merge } = require("webpack-merge"),
     CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+    const { GenerateSW } = require("workbox-webpack-plugin");
 
 
 module.exports = merge(common, {
@@ -36,6 +37,10 @@ module.exports = merge(common, {
     plugins: [
         new MiniCssExtractPlugin({
             filename: 'style.[contenthash].css'
-        })
+        }),
+        new GenerateSW({
+            clientsClaim: true,
+            skipWaiting: true,
+          }),
     ]
 })
