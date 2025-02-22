@@ -49,3 +49,4 @@ The following customizations are implemented from the list of bonus items:
 * during first server start the Weatherbit API did not respond in some cases, problem is yet unclear and regular functionality is provided after the first two - three requests
 ---"# TravelApp" 
 "# TravelApp" 
+"# TravelApp" 
